@@ -1,8 +1,21 @@
+import FilterCard from '../../components/FilterCard'
+import { S } from './styles'
+
 const SideBar = () => {
   return (
-    <aside>
-      <h2>Barra Lateral</h2>
-    </aside>
+    <S.Aside>
+      <div>
+        <S.Field type="text" placeholder="Buscar" />
+        <S.Filters>
+          <FilterCard />
+          <FilterCard />
+          <FilterCard />
+          <FilterCard />
+          <FilterCard />
+          <FilterCard active />
+        </S.Filters>
+      </div>
+    </S.Aside>
   )
 }
 
