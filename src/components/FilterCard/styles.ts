@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import variables from '../../styles/variables'
 import { Props } from '.'
 
 type PropsOnlyActive = Omit<Props, 'counter' | 'label'>
@@ -6,9 +7,12 @@ type PropsOnlyActive = Omit<Props, 'counter' | 'label'>
 export const S = {
   Card: styled.div<PropsOnlyActive>`
     padding: 8px;
-    border: 1px solid ${(props) => (props.active ? '#1E90FF' : '#a1a1a1')};
-    background-color: ${(props) => (props.active ? '#FFF' : '#fcfcfc')};
-    color: ${(props) => (props.active ? '#1E90FF' : '#5e5e5e')};
+    border: 1px solid
+      ${(props) => (props.active ? `${variables.blue}` : `${variables.gray6}`)};
+    background-color: ${(props) =>
+      props.active ? `${variables.white}` : `${variables.white2}`};
+    color: ${(props) =>
+      props.active ? `${variables.blue}` : `${variables.gray5}`};
     border-radius: 8px;
   `,
   Counter: styled.span`

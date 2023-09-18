@@ -1,9 +1,10 @@
 import styled from 'styled-components'
+import variables from '../../styles/variables'
 
 export const S = {
   Aside: styled.aside`
     padding: 16px;
-    background-color: #eee;
+    background-color: ${variables.white3};
     height: 100vh;
   `,
   Filters: styled.div`
@@ -15,10 +16,10 @@ export const S = {
   Field: styled.input`
     width: 100%;
     padding: 8px;
-    background-color: #fff;
+    background-color: ${variables.white};
     border-radius: 8px;
     font-weight: bold;
-    color: #666666;
-    border-color: #666666;
+    color: ${variables.gray4};
+    border-color: ${variables.gray4};
   `
 }
