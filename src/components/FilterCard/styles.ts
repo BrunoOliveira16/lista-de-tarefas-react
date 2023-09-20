@@ -1,11 +1,12 @@
 import styled from 'styled-components'
 import variables from '../../styles/variables'
-import { Props } from '.'
 
-type PropsOnlyActive = Omit<Props, 'counter' | 'label'>
+type Props = {
+  active: boolean
+}
 
 export const S = {
-  Card: styled.div<PropsOnlyActive>`
+  Card: styled.div<Props>`
     padding: 8px;
     border: 1px solid
       ${(props) => (props.active ? `${variables.blue}` : `${variables.gray6}`)};
@@ -14,6 +15,7 @@ export const S = {
     color: ${(props) =>
       props.active ? `${variables.blue}` : `${variables.gray5}`};
     border-radius: 8px;
+    cursor: pointer;
   `,
   Counter: styled.span`
     font-size: 24px;
