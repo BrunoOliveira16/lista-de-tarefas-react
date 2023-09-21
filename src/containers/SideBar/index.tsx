@@ -21,30 +21,30 @@ const SideBar = () => {
         <S.Filters>
           <FilterCard
             value={enums.Stats.PENDENTE}
-            criterion="stats"
+            criterion="status"
             label="Pendentes"
           />
           <FilterCard
             value={enums.Stats.CONCLUIDA}
-            criterion="stats"
+            criterion="status"
             label="Concluidas"
           />
           <FilterCard
             value={enums.Priority.URGENTE}
-            criterion="priority"
+            criterion="prioridade"
             label="Urgentes"
           />
           <FilterCard
             value={enums.Priority.IMPORTANTE}
-            criterion="priority"
+            criterion="prioridade"
             label="Importantes"
           />
           <FilterCard
             value={enums.Priority.NORMAL}
-            criterion="priority"
+            criterion="prioridade"
             label="Normal"
           />
-          <FilterCard criterion="all" label="Todas" />
+          <FilterCard criterion="todos" label="Todas" />
         </S.Filters>
       </div>
     </S.Aside>

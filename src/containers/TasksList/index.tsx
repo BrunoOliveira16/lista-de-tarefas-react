@@ -16,9 +16,9 @@ const TasksList = () => {
         (item) => item.title.toLowerCase().search(term.toLocaleLowerCase()) >= 0
       )
 
-      if (criterion === 'priority') {
+      if (criterion === 'prioridade') {
         tasksFilter = tasksFilter.filter((item) => item.priority === value)
-      } else if (criterion === 'stats') {
+      } else if (criterion === 'status') {
         tasksFilter = tasksFilter.filter((item) => item.stats === value)
       }
 
@@ -33,7 +33,7 @@ const TasksList = () => {
     const complement =
       term !== undefined && term.length > 0 ? `e "${term}"` : ''
 
-    if (criterion === 'all') {
+    if (criterion === 'todos') {
       message = `${amount} tarefa(s) encontrada(s) como: todas ${complement}`
     } else {
       message = `${amount} tarefa(s) encontrada(s) como: "${`${criterion} = ${value}`}" ${complement}`

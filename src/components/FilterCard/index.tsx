@@ -6,7 +6,7 @@ import { RootReducer } from '../../store'
 
 export type Props = {
   label: string
-  criterion: 'priority' | 'stats' | 'all'
+  criterion: 'prioridade' | 'status' | 'todos'
   value?: enums.Priority | enums.Stats
 }
 
@@ -31,11 +31,11 @@ const FilterCard = ({ label, criterion, value }: Props) => {
   }
 
   const countTasks = () => {
-    if (criterion === 'all') return tasks.items.length
-    if (criterion === 'priority') {
+    if (criterion === 'todos') return tasks.items.length
+    if (criterion === 'prioridade') {
       return tasks.items.filter((item) => item.priority === value).length
     }
-    if (criterion === 'stats') {
+    if (criterion === 'status') {
       return tasks.items.filter((item) => item.stats === value).length
     }
   }
