@@ -28,16 +28,28 @@ const TasksList = () => {
     }
   }
 
+  const showFilteredResult = (amount: number) => {
+    let message = ''
+    const complement =
+      term !== undefined && term.length > 0 ? `e "${term}"` : ''
+
+    if (criterion === 'all') {
+      message = `${amount} tarefa(s) encontrada(s) como: todas ${complement}`
+    } else {
+      message = `${amount} tarefa(s) encontrada(s) como: "${`${criterion} = ${value}`}" ${complement}`
+    }
+
+    return message
+  }
+
+  const tasks = filterTasks()
+  const messages = showFilteredResult(tasks.length)
+
   return (
     <S.Container>
-      <p>2 tarefas marcadas como: &quot;Categoria&quot; e &quot;{term}&quot;</p>
+      <S.Result>{messages}</S.Result>
       <ul>
-        <li>{term}</li>
-        <li>{criterion}</li>
-        <li>{value}</li>
-      </ul>
-      <ul>
-        {filterTasks().map((t, index) => (
+        {tasks.map((t, index) => (
           <li key={index}>
             <Task
               id={t.id}
