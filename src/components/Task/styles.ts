@@ -64,7 +64,7 @@ const ActionBar = styled.div`
   padding-top: 16px;
 `
 
-const Button = styled.button`
+export const Button = styled.button`
   color: ${variables.white};
   font-size: 12px;
   font-weight: bold;
@@ -83,9 +83,6 @@ export const S = {
   Description,
   ActionBar,
   Button,
-  SaveButton: styled(Button)`
-    background-color: ${variables.green};
-  `,
   CancelButton: styled(Button)`
     background-color: ${variables.red};
   `,

@@ -4,6 +4,7 @@ import { changeTerm } from '../../store/reducers/filter'
 import FilterCard from '../../components/FilterCard'
 import * as enums from '../../utils/enums/Task'
 import { S } from './styles'
+import { Field } from '../../styles'
 
 const SideBar = () => {
   const dispatch = useDispatch()
@@ -12,7 +13,7 @@ const SideBar = () => {
   return (
     <S.Aside>
       <div>
-        <S.Field
+        <Field
           type="text"
           placeholder="Buscar"
           value={term}
