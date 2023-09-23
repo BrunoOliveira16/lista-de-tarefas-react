@@ -24,5 +24,9 @@ export const S = {
     label {
       margin-right: 6px;
     }
+  `,
+  Option: styled.div`
+    display: inline;
+    text-transform: capitalize;
   `
 }
