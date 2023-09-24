@@ -61,10 +61,24 @@ const taskSlice = createSlice({
       } else {
         state.items.push(action.payload)
       }
+    },
+    changeStats: (
+      state,
+      action: PayloadAction<{ id: number; finish: boolean }>
+    ) => {
+      const indexToTask = state.items.findIndex(
+        (t) => t.id === action.payload.id
+      )
+
+      if (indexToTask >= 0) {
+        state.items[indexToTask].stats = action.payload.finish
+          ? enums.Stats.CONCLUIDA
+          : enums.Stats.PENDENTE
+      }
     }
   }
 })
 
-export const { remove, edit, register } = taskSlice.actions
+export const { remove, edit, register, changeStats } = taskSlice.actions
 
 export default taskSlice.reducer
