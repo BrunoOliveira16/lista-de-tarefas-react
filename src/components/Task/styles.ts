@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import variables from '../../styles/variables'
 import * as enums from '../../utils/enums/Task'
+import { Button } from '../../styles'
 
 type TagProps = {
   priority?: enums.Priority
@@ -70,25 +71,12 @@ const ActionBar = styled.div`
   padding-top: 16px;
 `
 
-export const Button = styled.button`
-  color: ${variables.white};
-  font-size: 12px;
-  font-weight: bold;
-  padding: 8px 12px;
-  border: none;
-  cursor: pointer;
-  background-color: ${variables.gray3};
-  border-radius: 8px;
-  margin-right: 8px;
-`
-
 export const S = {
   Card,
   Title,
   Tag,
   Description,
   ActionBar,
-  Button,
   CancelButton: styled(Button)`
     background-color: ${variables.red};
   `,
