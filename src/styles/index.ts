@@ -14,12 +14,22 @@ const GlobalStyle = createGlobalStyle`
 export const Container = styled.div`
   display: grid;
   grid-template-columns: 224px auto;
+
+  @media screen and (max-width: 765px) {
+    display: block;
+  }
 `
 
 export const MainContainer = styled.main`
   height: 100vh;
   overflow-y: scroll;
   padding: 0 40px;
+
+  @media screen and (max-width: 765px) {
+    width: 100%;
+    height: auto;
+    padding: 16px;
+  }
 `
 
 export const Title = styled.h2`
