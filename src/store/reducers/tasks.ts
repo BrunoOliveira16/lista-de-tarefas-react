@@ -50,7 +50,7 @@ const taskSlice = createSlice({
         state.items[indexToTask] = action.payload
       }
     },
-    register: (state, action: PayloadAction<Task>) => {
+    register: (state, action: PayloadAction<Omit<Task, 'id'>>) => {
       const isRegisterTask = state.items.find(
         (task) =>
           task.title.toLowerCase() === action.payload.title.toLowerCase()
@@ -59,7 +59,12 @@ const taskSlice = createSlice({
       if (isRegisterTask) {
         alert('Já existe uma tarefa com esse nome')
       } else {
-        state.items.push(action.payload)
+        const lastTask = state.items[state.items.length - 1]
+        const newTask = {
+          ...action.payload,
+          id: lastTask ? lastTask.id + 1 : 1
+        }
+        state.items.push(newTask)
       }
     },
     changeStats: (
